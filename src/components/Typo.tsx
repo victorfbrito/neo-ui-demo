@@ -1,7 +1,6 @@
 import * as React from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
-// Supported legacy variant names from neo-compat.css
 export type TypoVariant =
   | "display-lg" | "display-md" | "display-sm"
   | "headline-lg" | "headline-md" | "headline-sm"

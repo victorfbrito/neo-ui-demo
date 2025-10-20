@@ -23,7 +23,7 @@ const inputStyles = tv({
 });
 
 type InputVariants = VariantProps<typeof inputStyles>;
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & InputVariants;
+export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> & InputVariants;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ size, invalid, className, ...props }, ref) => {

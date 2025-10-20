@@ -36,7 +36,7 @@
     "dev": "vite",
     "build:tokens": "node scripts/build-tokens.mjs",
     "build": "npm run build:tokens && tsup && npm run build:css",
-    "build:css": "tailwindcss -i src/styles/library.css -o dist/styles.css --minify",
+    "build:css": "node -e \"const fs=require('fs'); const css=fs.readFileSync('src/styles/library.css','utf8'); fs.writeFileSync('dist/styles.css',css);\"",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

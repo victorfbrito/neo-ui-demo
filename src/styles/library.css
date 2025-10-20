@@ -6,6 +6,30 @@
 
 @import "./tokens.css";
 
+/* Material Symbols Font */
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v272/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjzaqkNCeE.woff2) format('woff2');
+  font-display: swap;
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  color: inherit;
+}
+
 .btn { @apply inline-flex items-center justify-center gap-2 rounded-[--radius-lg] px-4 py-2 text-sm font-medium transition; }
 .btn-outline { @apply border border-[--color-brand] text-[--color-brand] bg-[--surface] hover:bg-[--color-brand]/10; }
 .btn-primary { @apply bg-[--color-brand] text-white hover:opacity-90 active:opacity-80; }

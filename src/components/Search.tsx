@@ -51,7 +51,7 @@ export default function Search({
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const rootRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const searchTimeoutRef = useRef<number | null>(null);
 
   // Normalize options
   const normalizedOptions: SearchOption[] = useMemo(() => {
@@ -79,7 +79,7 @@ export default function Search({
       if (searchTimeoutRef.current) {
         clearTimeout(searchTimeoutRef.current);
       }
-      searchTimeoutRef.current = setTimeout(() => {
+      searchTimeoutRef.current = window.setTimeout(() => {
         onSearch(query);
       }, searchDelay);
     },

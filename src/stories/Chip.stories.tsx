@@ -27,7 +27,7 @@ export const Variants: Story = {
       <Chip variant="success" icon="check" label="Success" />
       <Chip variant="warning" icon="error_outline" label="Warning" />
       <Chip variant="error" icon="error" label="Error" />
-      <Chip variant="light" icon="info" label="Info" />
+      <Chip variant="light" icon="help_outline" label="Info" />
       <Chip variant="dark" icon="schedule" label="Scheduled" />
     </div>
   )

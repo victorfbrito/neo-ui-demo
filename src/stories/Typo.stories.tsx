@@ -50,7 +50,7 @@ export const Matrix: Story = {
       <div className="grid grid-cols-1 gap-4">
         {variants.map(v => (
           <div key={v} className="flex flex-col gap-1">
-            <div className="neo-text-muted text-sm">{v}</div>
+            <div className="text-sm">{v}</div>
             <div className="flex flex-wrap gap-6">
               {weights.map(w => (
                 <Typo key={w} variant={v} bold={w}>

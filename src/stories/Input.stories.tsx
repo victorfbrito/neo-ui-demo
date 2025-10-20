@@ -3,8 +3,7 @@ import { Input } from "../components/Input";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
-  component: Input,
-  args: { placeholder: "Type here..." }
+  component: Input
 };
 export default meta;
 type Story = StoryObj<typeof Input>;
