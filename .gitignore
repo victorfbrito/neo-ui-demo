@@ -76,8 +76,8 @@ jspm_packages/
 .cache
 .parcel-cache
 
-# Storybook build outputs
-storybook-static/
+# Storybook build outputs (commented out for GitHub Pages)
+# storybook-static/
 
 # Temporary folders
 tmp/

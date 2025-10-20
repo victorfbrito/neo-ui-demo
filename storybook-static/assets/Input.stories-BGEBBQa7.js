@@ -1,0 +1,9 @@
+import{j as r}from"./jsx-runtime-CDt2p4po.js";import{r as f}from"./index-GiUgBvb1.js";import{c as v}from"./index-B8ehKEGt.js";const g=v({base:"block w-full rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] text-[var(--fg)] placeholder:text-[var(--muted-fg)] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)]/40 disabled:cursor-not-allowed disabled:opacity-50",variants:{size:{sm:"h-9 px-3 text-sm",md:"h-10 px-3.5 text-sm",lg:"h-11 px-4 text-base"},invalid:{true:"border-red-500 focus-visible:ring-red-500/40",false:""}},defaultVariants:{size:"md",invalid:!1}}),e=f.forwardRef(({size:c,invalid:p,className:m,...u},x)=>r.jsx("input",{ref:x,className:g({size:c,invalid:p,className:m}),...u}));e.displayName="Input";e.__docgenInfo={description:"",methods:[],displayName:"Input"};const z={title:"Components/Input",component:e},s={render:()=>r.jsxs("div",{className:"flex flex-col gap-3 w-80",children:[r.jsx(e,{size:"sm",placeholder:"Small"}),r.jsx(e,{size:"md",placeholder:"Medium"}),r.jsx(e,{size:"lg",placeholder:"Large"})]})},a={render:()=>r.jsx(e,{invalid:!0,placeholder:"Invalid state",className:"w-80"})};var o,l,t;s.parameters={...s.parameters,docs:{...(o=s.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  render: () => <div className="flex flex-col gap-3 w-80">
+      <Input size="sm" placeholder="Small" />
+      <Input size="md" placeholder="Medium" />
+      <Input size="lg" placeholder="Large" />
+    </div>
+}`,...(t=(l=s.parameters)==null?void 0:l.docs)==null?void 0:t.source}}};var d,n,i;a.parameters={...a.parameters,docs:{...(d=a.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  render: () => <Input invalid placeholder="Invalid state" className="w-80" />
+}`,...(i=(n=a.parameters)==null?void 0:n.docs)==null?void 0:i.source}}};const j=["Sizes","Invalid"];export{a as Invalid,s as Sizes,j as __namedExportsOrder,z as default};

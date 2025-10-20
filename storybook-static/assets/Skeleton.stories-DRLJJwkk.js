@@ -1,0 +1,7 @@
+import{j as e}from"./jsx-runtime-CDt2p4po.js";import"./index-GiUgBvb1.js";const m={none:"rounded-none",sm:"rounded-[var(--radius-sm)]",md:"rounded-[var(--radius-md)]",lg:"rounded-[var(--radius-lg)]",xl:"rounded-[var(--radius-xl)]",full:"rounded-full"};function a({className:d="",rounded:o="md",...u}){return e.jsx("div",{className:["animate-pulse bg-[var(--muted)]",m[o],d].join(" "),...u})}a.__docgenInfo={description:"",methods:[],displayName:"Skeleton",props:{rounded:{required:!1,tsType:{name:"union",raw:'"none" | "sm" | "md" | "lg" | "xl" | "full"',elements:[{name:"literal",value:'"none"'},{name:"literal",value:'"sm"'},{name:"literal",value:'"md"'},{name:"literal",value:'"lg"'},{name:"literal",value:'"xl"'},{name:"literal",value:'"full"'}]},description:"",defaultValue:{value:'"md"',computed:!1}},className:{defaultValue:{value:'""',computed:!1},required:!1}}};const c={title:"Components/Skeleton",component:a},l={render:()=>e.jsxs("div",{className:"space-y-3",children:[e.jsx(a,{className:"h-4 w-48"}),e.jsx(a,{className:"h-4 w-72"}),e.jsx(a,{className:"h-24 w-full rounded-[--radius-lg]"})]})};var s,n,r;l.parameters={...l.parameters,docs:{...(s=l.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  render: () => <div className="space-y-3">
+      <Skeleton className="h-4 w-48" />
+      <Skeleton className="h-4 w-72" />
+      <Skeleton className="h-24 w-full rounded-[--radius-lg]" />
+    </div>
+}`,...(r=(n=l.parameters)==null?void 0:n.docs)==null?void 0:r.source}}};const p=["Blocks"];export{l as Blocks,p as __namedExportsOrder,c as default};
