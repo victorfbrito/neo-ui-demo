@@ -1,0 +1,11 @@
+/* Build-only CSS for publishing the lib (no Preflight/reset) */
+@import "tailwindcss/utilities";
+
+/* Scan only your library sources to keep the CSS tiny */
+@source "../components/**/*.{ts,tsx}";
+
+@import "./tokens.css";
+
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-[--radius-lg] px-4 py-2 text-sm font-medium transition; }
+.btn-outline { @apply border border-[--color-brand] text-[--color-brand] bg-[--surface] hover:bg-[--color-brand]/10; }
+.btn-primary { @apply bg-[--color-brand] text-white hover:opacity-90 active:opacity-80; }

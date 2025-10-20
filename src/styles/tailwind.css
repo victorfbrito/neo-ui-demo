@@ -1,0 +1,14 @@
+/* Tailwind v4+ core */
+@import "tailwindcss";
+
+/* Ensure Tailwind scans your source & story files */
+@source "../**/*.{ts,tsx,mdx}";
+
+@import "./tokens.css";
+
+@import "./neo-compat.css";
+
+/* Optional shared utility classes used by some components */
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-[--radius-lg] px-4 py-2 text-sm font-medium transition; }
+.btn-primary { @apply bg-[--color-brand] text-white hover:opacity-90 active:opacity-80; }
+.btn-outline { @apply border border-[--color-brand] text-[--color-brand] bg-[--surface] hover:bg-[--color-brand]/10; }
