@@ -1,5 +1,11 @@
 # @victorfbrito/neo-ui-demo
 
+## 0.1.5
+
+### Patch Changes
+
+- Document Tailwind CSS requirement and update consumer setup instructions. The library CSS now only includes design tokens and base styles - consumers must have Tailwind configured to process utility classes.
+
 ## 0.1.4
 
 ### Patch Changes

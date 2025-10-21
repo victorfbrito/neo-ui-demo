@@ -13,21 +13,59 @@ A modern React component library built with Tailwind CSS v4+ and TypeScript. Fea
 
 ## 📦 Installation
 
+⚠️ **Important**: This library requires **Tailwind CSS** in your project.
+
+### Step 1: Install the library
+
 ```bash
-npm install @your-username/my-ui-lib
+npm install @victorfbrito/neo-ui-demo
+```
+
+### Step 2: Install Tailwind CSS (if not already installed)
+
+```bash
+npm install -D tailwindcss@latest postcss autoprefixer
+npx tailwindcss init
+```
+
+### Step 3: Configure Tailwind to scan the library
+
+Update your `tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // 👇 Required: Scan the component library
+    "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+### Step 4: Import the library CSS
+
+In your main entry file (`src/main.tsx` or `src/index.tsx`):
+
+```tsx
+import '@victorfbrito/neo-ui-demo/styles';
 ```
 
 ## 🎨 Usage
 
-### Basic Setup
+### Basic Example
 
 ```tsx
-import { Button, Input, Typo } from '@your-username/my-ui-lib';
-import '@your-username/my-ui-lib/styles';
+import { Button, Input, Typo } from '@victorfbrito/neo-ui-demo';
 
 function App() {
   return (
-    <div>
+    <div className="p-8">
       <Typo variant="headline-lg">Welcome to My UI Library</Typo>
       <Input placeholder="Enter your name" />
       <Button variant="primary">Get Started</Button>
@@ -39,13 +77,16 @@ function App() {
 ### Dark Mode
 
 ```tsx
-// Add dark mode class to your root element
+// Enable dark mode
 document.documentElement.classList.add('dark');
+
+// Toggle dark mode
+document.documentElement.classList.toggle('dark');
 ```
 
-### Tailwind CSS Setup
+## Why Tailwind CSS is Required
 
-If you're using Tailwind CSS in your project, you can extend the library's tokens:
+This library uses Tailwind utility classes directly in components (e.g., `gap-2`, `px-4`, `hover:bg-cyan-400`). Your build tool needs Tailwind to process these classes into actual CSS.
 
 ```js
 // tailwind.config.js
