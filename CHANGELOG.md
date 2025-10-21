@@ -1,5 +1,12 @@
 # @victorfbrito/neo-ui-demo
 
+## 0.1.7
+
+### Patch Changes
+
+- 65db542: Add Tailwind CSS v4 setup instructions alongside v3. Documentation now supports both Tailwind versions with clear examples for each.
+- Fix CSS comment syntax - remove curly braces that were causing PostCSS parsing errors
+
 ## 0.1.6
 
 ### Patch Changes

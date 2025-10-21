@@ -14,21 +14,16 @@ const tokensCSS = fs.readFileSync("src/styles/tokens.css", "utf8");
 const distCSS = `/**
  * @victorfbrito/neo-ui-demo - Design Tokens & Base Styles
  * 
- * This file contains CSS custom properties (tokens) and font definitions.
- * 
  * ⚠️  IMPORTANT: This library requires Tailwind CSS in your project.
- * The components use Tailwind utility classes that must be processed by your build tool.
  * 
- * Setup for Tailwind v4 (recommended):
- * In your CSS file:
+ * Tailwind v4 setup (in your CSS file):
  *   @import "tailwindcss";
  *   @source "../node_modules/@victorfbrito/neo-ui-demo/dist";
  *   @import "@victorfbrito/neo-ui-demo/styles";
  * 
- * Setup for Tailwind v3:
- *   1. Add to tailwind.config.js content array:
- *      "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
- *   2. Import in your app: import '@victorfbrito/neo-ui-demo/styles'
+ * Tailwind v3 setup:
+ *   - Add library path to tailwind.config.js content array
+ *   - Import this file in your app
  * 
  * See: https://github.com/victorfbrito/neo-ui-demo#installation
  */
