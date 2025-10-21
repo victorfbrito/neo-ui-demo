@@ -17,13 +17,45 @@ npm install @victorfbrito/neo-ui-demo
 ### Step 2: Install Tailwind CSS (if not already installed)
 
 ```bash
-npm install -D tailwindcss@latest postcss autoprefixer
+npm install -D tailwindcss@latest
+```
+
+### Step 3: Configure Tailwind
+
+Choose your Tailwind version:
+
+#### **For Tailwind CSS v4** (recommended)
+
+In your main CSS file (e.g., `src/index.css`):
+
+```css
+@import "tailwindcss";
+
+/* Scan your app files */
+@source "**/*.{html,js,ts,jsx,tsx}";
+
+/* 👇 Scan the component library */
+@source "../node_modules/@victorfbrito/neo-ui-demo/dist";
+
+/* 👇 Import library tokens and styles */
+@import "@victorfbrito/neo-ui-demo/styles";
+```
+
+Then import your CSS in `src/main.tsx`:
+
+```tsx
+import './index.css'
+```
+
+#### **For Tailwind CSS v3**
+
+Initialize Tailwind:
+
+```bash
 npx tailwindcss init
 ```
 
-### Step 3: Configure Tailwind to scan the library
-
-Update your `tailwind.config.js`:
+Update `tailwind.config.js`:
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -41,21 +73,22 @@ export default {
 }
 ```
 
-### Step 4: Import the library CSS
-
-In your main CSS file (e.g., `src/index.css` or `src/App.css`):
+In your main CSS file (`src/index.css`):
 
 ```css
-@import '@victorfbrito/neo-ui-demo/styles';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
-Or in your main JS/TS file:
+Then in `src/main.tsx`:
 
 ```tsx
-import '@victorfbrito/neo-ui-demo/styles';
+import './index.css'
+import '@victorfbrito/neo-ui-demo/styles'
 ```
 
-### Step 5: Use the components!
+### Step 4: Use the components!
 
 ```tsx
 import { Button, Input, Typo } from '@victorfbrito/neo-ui-demo';

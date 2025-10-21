@@ -19,10 +19,16 @@ const distCSS = `/**
  * ⚠️  IMPORTANT: This library requires Tailwind CSS in your project.
  * The components use Tailwind utility classes that must be processed by your build tool.
  * 
- * Setup:
- * 1. Install: npm install tailwindcss@latest
- * 2. Configure Tailwind to scan node_modules/@victorfbrito/neo-ui-demo
- * 3. Import this CSS file in your app
+ * Setup for Tailwind v4 (recommended):
+ * In your CSS file:
+ *   @import "tailwindcss";
+ *   @source "../node_modules/@victorfbrito/neo-ui-demo/dist";
+ *   @import "@victorfbrito/neo-ui-demo/styles";
+ * 
+ * Setup for Tailwind v3:
+ *   1. Add to tailwind.config.js content array:
+ *      "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
+ *   2. Import in your app: import '@victorfbrito/neo-ui-demo/styles'
  * 
  * See: https://github.com/victorfbrito/neo-ui-demo#installation
  */

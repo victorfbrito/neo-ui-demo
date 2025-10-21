@@ -1,5 +1,11 @@
 # @victorfbrito/neo-ui-demo
 
+## 0.1.6
+
+### Patch Changes
+
+- Add Tailwind CSS v4 setup instructions alongside v3. Documentation now supports both Tailwind versions with clear examples for each.
+
 ## 0.1.5
 
 ### Patch Changes

@@ -13,9 +13,27 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
 ```
 
-### 2️⃣ Configure `tailwind.config.js`
+### 2️⃣ Configure Tailwind
 
-Add the library to the `content` array so Tailwind scans it:
+#### **Using Tailwind CSS v4** (recommended)
+
+In your `src/index.css` or `src/app.css`:
+
+```css
+@import "tailwindcss";
+
+/* 👇 ADD THIS LINE to scan the component library */
+@source "../node_modules/@victorfbrito/neo-ui-demo/dist";
+
+/* 👇 ADD THIS LINE for library tokens and styles */
+@import "@victorfbrito/neo-ui-demo/styles";
+```
+
+That's it for v4! No separate imports needed.
+
+#### **Using Tailwind CSS v3**
+
+Update your `tailwind.config.js`:
 
 ```js
 /** @type {import('tailwindcss').Config} */
@@ -33,9 +51,7 @@ export default {
 }
 ```
 
-### 3️⃣ Import Tailwind in your CSS
-
-In your `src/index.css` or `src/App.css`:
+In your `src/index.css`:
 
 ```css
 @tailwind base;
@@ -43,17 +59,42 @@ In your `src/index.css` or `src/App.css`:
 @tailwind utilities;
 ```
 
-### 4️⃣ Import the library CSS
-
-In your `src/main.tsx` or `src/App.tsx`:
+In your `src/main.tsx`:
 
 ```tsx
 import '@victorfbrito/neo-ui-demo/styles';
 ```
 
-## Example Files
+## Complete Example Files
 
-### `tailwind.config.js`
+### **For Tailwind v4**
+
+#### `src/index.css`
+```css
+@import "tailwindcss";
+@source "../node_modules/@victorfbrito/neo-ui-demo/dist";
+@import "@victorfbrito/neo-ui-demo/styles";
+```
+
+#### `src/main.tsx`
+```tsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'  // ← Tailwind + Library CSS
+import App from './App.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
+
+---
+
+### **For Tailwind v3**
+
+#### `tailwind.config.js`
 ```js
 export default {
   content: [
@@ -68,14 +109,14 @@ export default {
 }
 ```
 
-### `src/index.css`
+#### `src/index.css`
 ```css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-### `src/main.tsx`
+#### `src/main.tsx`
 ```tsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
