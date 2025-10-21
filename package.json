@@ -39,7 +39,6 @@
   ],
   "files": [
     "dist",
-    "QUICK_FIX_FOR_CONSUMER.md",
     "CONSUMER_SETUP.md"
   ],
   "scripts": {

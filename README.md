@@ -1,6 +1,8 @@
 # Neo UI Demo
 
-A modern React component library built with Tailwind CSS v4+ and TypeScript. Features dark mode, design tokens, and comprehensive Storybook documentation.
+A modern React component library built with Tailwind CSS v4 and TypeScript. Features dark mode, design tokens, and comprehensive Storybook documentation.
+
+> ⚠️ **Requirements:** This library requires **Tailwind CSS v4** and **@tailwindcss/postcss** in your project. See installation steps below.
 
 ## 🚀 Features
 
@@ -12,8 +14,6 @@ A modern React component library built with Tailwind CSS v4+ and TypeScript. Fea
 - **Storybook**: Comprehensive documentation and testing environment
 
 ## 📦 Installation
-
-⚠️ **Important**: This library requires **Tailwind CSS** in your project.
 
 ### Step 1: Install the library
 
