@@ -1,5 +1,11 @@
 # @victorfbrito/neo-ui-demo
 
+## 0.2.1
+
+### Patch Changes
+
+- Improve button styling in Autocomplete and Search components - make action buttons perfectly circular with fixed dimensions and adjusted padding
+
 ## 0.2.0
 
 ### Minor Changes

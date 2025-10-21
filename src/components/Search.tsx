@@ -169,8 +169,8 @@ export default function Search({
           disabled ? "opacity-60 cursor-not-allowed" : ""
         ].join(" ")}
       >
-        <div className="relative flex px-5 pb-1 h-full">
-          <div className="flex w-full">
+        <div className="relative flex pl-5 pr-3 h-full">
+          <div className="flex w-full items-center">
 
             {/* Input */}
             <input
@@ -211,7 +211,7 @@ export default function Search({
               disabled={disabled}
               aria-label={selectedOption && !open ? "Clear" : open ? "Collapse" : "Expand"}
               className={[
-                "flex items-center justify-center rounded-full bg-transparent",
+                "flex items-center justify-center rounded-full bg-transparent w-10 h-10",
                 disabled ? "cursor-not-allowed" : "hover:bg-[var(--muted)]"
               ].join(" ")}
             >

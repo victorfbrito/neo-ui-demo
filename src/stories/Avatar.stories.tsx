@@ -15,14 +15,20 @@ const meta: Meta<typeof Avatar> = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-export const Fallback: Story = {};
-
 export const WithImage: Story = {
   args: {
-    size: "md",
     src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=facearea&facepad=2"
   }
 };
+
+export const DifferentSizes: Story = {
+  render: () => (
+    <div className="flex flex-wrap items-center gap-4">
+      <Avatar name="Ada Lovelace" size="sm" color="#5ABDCC"/>
+      <Avatar name="Grace Hopper" size="md" color="#22A9CB"/>
+    </div>)
+};
+
 
 export const CustomColor: Story = {
   args: {
