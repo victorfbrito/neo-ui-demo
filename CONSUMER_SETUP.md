@@ -1,8 +1,8 @@
 # Consumer Setup Guide
 
-## ⚠️ Important: Tailwind CSS Required
+## ⚠️ Important: Tailwind CSS v4 Required
 
-This component library uses **Tailwind CSS utility classes** directly in the components. Your project **MUST** have Tailwind CSS configured to use this library.
+This component library uses **Tailwind CSS v4 utility classes** directly in the components. Your project **MUST** have Tailwind CSS v4 configured to use this library.
 
 ---
 
@@ -14,25 +14,30 @@ This component library uses **Tailwind CSS utility classes** directly in the com
 npm install @victorfbrito/neo-ui-demo
 ```
 
-### Step 2: Install Tailwind CSS (if not already installed)
+### Step 2: Install Tailwind CSS v4
 
 ```bash
-npm install -D tailwindcss@latest
+npm install -D tailwindcss@latest @tailwindcss/postcss
 ```
 
-### Step 3: Configure Tailwind
+### Step 3: Configure PostCSS
 
-Choose your Tailwind version:
+Create `postcss.config.js` in your project root:
 
-#### **For Tailwind CSS v4** (recommended)
+```js
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {}
+  }
+}
+```
+
+### Step 4: Setup your CSS file
 
 In your main CSS file (e.g., `src/index.css`):
 
 ```css
 @import "tailwindcss";
-
-/* Scan your app files */
-@source "**/*.{html,js,ts,jsx,tsx}";
 
 /* 👇 Scan the component library */
 @source "../node_modules/@victorfbrito/neo-ui-demo/dist";
@@ -47,48 +52,7 @@ Then import your CSS in `src/main.tsx`:
 import './index.css'
 ```
 
-#### **For Tailwind CSS v3**
-
-Initialize Tailwind:
-
-```bash
-npx tailwindcss init
-```
-
-Update `tailwind.config.js`:
-
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    // 👇 Add this line to scan the component library
-    "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-In your main CSS file (`src/index.css`):
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-Then in `src/main.tsx`:
-
-```tsx
-import './index.css'
-import '@victorfbrito/neo-ui-demo/styles'
-```
-
-### Step 4: Use the components!
+### Step 5: Use the components!
 
 ```tsx
 import { Button, Input, Typo } from '@victorfbrito/neo-ui-demo';

@@ -21,76 +21,42 @@ A modern React component library built with Tailwind CSS v4+ and TypeScript. Fea
 npm install @victorfbrito/neo-ui-demo
 ```
 
-### Step 2: Install Tailwind CSS (if not already installed)
+### Step 2: Install Tailwind CSS v4
 
 ```bash
-npm install -D tailwindcss@latest
+npm install -D tailwindcss@latest @tailwindcss/postcss
 ```
 
-### Step 3: Configure Tailwind to scan the library
+### Step 3: Configure PostCSS
 
-<details>
-<summary><strong>For Tailwind CSS v4</strong> (recommended)</summary>
+Create `postcss.config.js` in your project root:
 
-In your main CSS file (e.g., `src/index.css` or `src/app.css`):
+```js
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {}
+  }
+}
+```
+
+### Step 4: Setup your CSS file
+
+In your main CSS file (e.g., `src/index.css`):
 
 ```css
 @import "tailwindcss";
 
-/* 👇 Add this to scan the component library */
+/* 👇 Scan the component library */
 @source "../node_modules/@victorfbrito/neo-ui-demo/dist";
 
-/* Your other imports */
+/* 👇 Import library styles */
 @import "@victorfbrito/neo-ui-demo/styles";
 ```
 
-</details>
-
-<details>
-<summary><strong>For Tailwind CSS v3</strong></summary>
-
-Update your `tailwind.config.js`:
-
-```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    // 👇 Required: Scan the component library
-    "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-In your main CSS file:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-Then import the library CSS in your main entry file:
+Then import this CSS in your `src/main.tsx`:
 
 ```tsx
-import '@victorfbrito/neo-ui-demo/styles';
-```
-
-</details>
-
-### Step 4: Import the library CSS
-
-**For Tailwind v4:** Already included in Step 3 above
-
-**For Tailwind v3:** In your main entry file (`src/main.tsx`):
-
-```tsx
-import '@victorfbrito/neo-ui-demo/styles';
+import './index.css'
 ```
 
 ## 🎨 Usage
@@ -121,27 +87,11 @@ document.documentElement.classList.add('dark');
 document.documentElement.classList.toggle('dark');
 ```
 
-## Why Tailwind CSS is Required
+## Why Tailwind CSS v4 is Required
 
-This library uses Tailwind utility classes directly in components (e.g., `gap-2`, `px-4`, `hover:bg-cyan-400`). Your build tool needs Tailwind to process these classes into actual CSS.
+This library uses **Tailwind CSS v4** utility classes directly in components (e.g., `gap-2`, `px-4`, `hover:bg-cyan-400`). Your build tool needs Tailwind to process these classes into actual CSS.
 
-```js
-// tailwind.config.js
-module.exports = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@your-username/my-ui-lib/dist/**/*.{js,ts,jsx,tsx}'
-  ],
-  theme: {
-    extend: {
-      colors: {
-        brand: 'var(--color-brand)',
-        // ... other design tokens
-      }
-    }
-  }
-}
-```
+**Note:** This library requires Tailwind v4+. If you're using Tailwind v3, please upgrade to v4.
 
 ## 🧩 Components
 

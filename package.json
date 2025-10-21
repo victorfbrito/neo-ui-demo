@@ -1,8 +1,8 @@
 {
   "name": "@victorfbrito/neo-ui-demo",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "private": false,
-  "description": "A modern React component library built with Tailwind CSS v4+ and TypeScript. Features dark mode, design tokens, and comprehensive Storybook documentation.",
+  "description": "A modern React component library built with Tailwind CSS v4 and TypeScript. Features dark mode, design tokens, and comprehensive Storybook documentation. Requires Tailwind v4+.",
   "keywords": [
     "react",
     "components",

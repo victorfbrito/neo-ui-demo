@@ -1,127 +1,72 @@
-# ⚠️ IMPORTANT: Tailwind CSS Required!
+# ⚠️ IMPORTANT: Tailwind CSS v4 Required!
 
 ## The Issue
 
-The components render but have no styling because this library uses **Tailwind CSS utility classes** directly.
+The components render but have no styling because this library uses **Tailwind CSS v4 utility classes** directly.
 
 ## The Solution (3 Steps)
 
-### 1️⃣ Install Tailwind CSS
+### 1️⃣ Install Tailwind CSS v4
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init
+npm install -D tailwindcss@latest @tailwindcss/postcss
 ```
 
-### 2️⃣ Configure Tailwind
+### 2️⃣ Configure PostCSS
 
-#### **Using Tailwind CSS v4** (recommended)
-
-In your `src/index.css` or `src/app.css`:
-
-```css
-@import "tailwindcss";
-
-/* 👇 ADD THIS LINE to scan the component library */
-@source "../node_modules/@victorfbrito/neo-ui-demo/dist";
-
-/* 👇 ADD THIS LINE for library tokens and styles */
-@import "@victorfbrito/neo-ui-demo/styles";
-```
-
-That's it for v4! No separate imports needed.
-
-#### **Using Tailwind CSS v3**
-
-Update your `tailwind.config.js`:
+Create `postcss.config.js` in your project root:
 
 ```js
-/** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    // 👇 ADD THIS LINE
-    "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+  plugins: {
+    '@tailwindcss/postcss': {}
+  }
 }
 ```
+
+### 3️⃣ Setup your CSS file
 
 In your `src/index.css`:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* 👇 Scan the component library */
+@source "../node_modules/@victorfbrito/neo-ui-demo/dist";
+
+/* 👇 Import library styles */
+@import "@victorfbrito/neo-ui-demo/styles";
 ```
 
-In your `src/main.tsx`:
+Then import this CSS in `src/main.tsx`:
 
 ```tsx
-import '@victorfbrito/neo-ui-demo/styles';
+import './index.css'
 ```
 
 ## Complete Example Files
 
-### **For Tailwind v4**
+### `postcss.config.js`
+```js
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {}
+  }
+}
+```
 
-#### `src/index.css`
+### `src/index.css`
 ```css
 @import "tailwindcss";
 @source "../node_modules/@victorfbrito/neo-ui-demo/dist";
 @import "@victorfbrito/neo-ui-demo/styles";
 ```
 
-#### `src/main.tsx`
+### `src/main.tsx`
 ```tsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'  // ← Tailwind + Library CSS
-import App from './App.tsx'
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
-```
-
----
-
-### **For Tailwind v3**
-
-#### `tailwind.config.js`
-```js
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@victorfbrito/neo-ui-demo/dist/**/*.{js,mjs,cjs}"
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-#### `src/index.css`
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-#### `src/main.tsx`
-```tsx
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'  // ← Tailwind directives
-import '@victorfbrito/neo-ui-demo/styles'  // ← Library tokens
+import './index.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(

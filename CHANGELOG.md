@@ -1,5 +1,15 @@
 # @victorfbrito/neo-ui-demo
 
+## 0.2.0
+
+### Minor Changes
+
+- BREAKING: Require Tailwind CSS v4. Remove all Tailwind v3 documentation and examples. Simplify setup to focus exclusively on Tailwind v4 with PostCSS plugin configuration.
+
+### Patch Changes
+
+- Document @tailwindcss/postcss requirement for Tailwind v4 users. Update all setup instructions to include the PostCSS plugin installation.
+
 ## 0.1.7
 
 ### Patch Changes
