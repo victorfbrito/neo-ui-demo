@@ -1,10 +1,10 @@
 /* Tailwind v4+ core */
 @import "tailwindcss";
+@import "./tokens.css";
 
 /* Ensure Tailwind scans your source & story files */
 @source "../**/*.{ts,tsx,mdx}";
 
-@import "./tokens.css";
 
 /* Material Symbols Font */
 @font-face {

@@ -1,9 +1,17 @@
 {
   "name": "@victorfbrito/neo-ui-demo",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "A modern React component library built with Tailwind CSS v4+ and TypeScript. Features dark mode, design tokens, and comprehensive Storybook documentation.",
-  "keywords": ["react", "components", "ui", "tailwind", "typescript", "design-system", "storybook"],
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "tailwind",
+    "typescript",
+    "design-system",
+    "storybook"
+  ],
   "author": "Your Name <victor_f_brito@outlook.com>",
   "license": "MIT",
   "repository": {

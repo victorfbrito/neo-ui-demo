@@ -1,10 +1,10 @@
 /* Build-only CSS for publishing the lib (no Preflight/reset) */
 @import "tailwindcss/utilities";
+@import "./tokens.css";
 
 /* Scan only your library sources to keep the CSS tiny */
 @source "../components/**/*.{ts,tsx}";
 
-@import "./tokens.css";
 
 /* Material Symbols Font */
 @font-face {
